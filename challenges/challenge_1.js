@@ -3,9 +3,7 @@ const sumOddNumbers = (number) => {
     let sum = 0;
 
     for(let i=0; i<= number; i++){
-        if(i%2 === 0){
-            sum += i;
-        }
+        if(i%2 === 0) sum += i;
     } 
 
     return sum;
@@ -22,9 +20,7 @@ const countVowels= (str) => {
     let count = 0;
 
     for(let i = 0; i < strArray.length; i++){
-        if(vowels.indexOf(strArray[i].toUpperCase()) >= 0){
-            count++
-        }
+        if(vowels.indexOf(strArray[i].toUpperCase()) >= 0) count++
     }
 
     return count;
