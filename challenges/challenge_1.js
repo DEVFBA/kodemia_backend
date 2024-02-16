@@ -1,4 +1,4 @@
-const sumOddNumbers = (number) => {
+const sumEvenNumbers = (number) => {
 
     let sum = 0;
 
@@ -10,7 +10,7 @@ const sumOddNumbers = (number) => {
 
 }
 
-console.log(`Odd Numbers Sum: ${sumOddNumbers(10)}`);
+console.log(`Even Numbers Sum: ${sumEvenNumbers(10)}`);
 
 const countVowels= (str) => {
 
