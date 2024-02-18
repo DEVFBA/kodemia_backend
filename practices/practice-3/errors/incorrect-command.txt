@@ -1,0 +1,10 @@
+Command not recognized!!!
+
+Please enter a correct command
+
+Options: 
+
+    init [Project Name]         Creates a web project with the standard
+                                structure and name "Project Name"
+
+    html [File Name]            Creates and HTML File in the current path

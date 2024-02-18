@@ -1,8 +1,8 @@
 const getGreatestNumber = (arv) => {
 
-    const numbers = [...arv]
+    //const numbers = [...arv]
 
-    return Math.max(numbers);
+    return Math.max(...arv);
 
 }
 
