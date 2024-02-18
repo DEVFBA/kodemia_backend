@@ -15,6 +15,8 @@ const createJSFile = (options = { projectName: projectName, fileName: fileName, 
     
         });
 
+        return;
+
     }
 
     if(!folderExists('js')){

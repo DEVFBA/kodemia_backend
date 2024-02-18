@@ -7,4 +7,12 @@ Options:
     init [Project Name]         Creates a web project with the standard
                                 structure and name "Project Name"
 
-    html [File Name]            Creates and HTML File in the current path
+    html [File Name]            Creates an HTML File in the current path
+
+    css [File Name]             Creates a CSS File in the CSS Folder, if
+                                CSS folder does not exist, it will be 
+                                created
+
+    js [File Name]              Creates a JS File in the JS Folder, if
+                                JS folder does not exist, it will be 
+                                created

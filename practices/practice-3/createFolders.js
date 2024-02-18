@@ -24,7 +24,7 @@ const createJSFolder = (projectName, createIndex) => {
 
         console.log(`¡¡¡El directorio js para el proyecto fue creado con éxito!!!`);
 
-        if(createIndex) createJSFile(projectName, 'index');
+        if(createIndex) createJSFile({ projectName: projectName, fileName: 'index', createIndex: true });
 
     });
 
