@@ -1,3 +1,5 @@
+const { isGeneratorFunction } = require("util/types")
+
 const object1 = {
 
     name: 'Angel',
@@ -8,8 +10,8 @@ const object1 = {
 
 const object2 = {
 
-    name: 'Angel',
     lastName: 'Gutierrez',
+    name: 'Angel',
     age: 35
 
 }
@@ -37,17 +39,24 @@ const sameObject = (object1, object2) => {
     /**
      * Same number of properties
      */
-
-    console.log(Object.entries(object1).length);
-    console.log(Object.entries(object2).length);
-
-    if(Object.entries(object1).length !== Object.entries(object2).length){
+    if(Object.keys(object1).length !== Object.keys(object2).length){
         sameObject = false;
         return sameObject;
+    }
+
+    const object1Properties = Object.keys(object1);
+    
+    for(let i = 0; i < object1Properties.length; i++){
+
+        if(Object.keys(object2).indexOf(object1Properties[i]) < 0){
+            sameObject = false;
+            return sameObject;
+        }
+
     }
 
     return sameObject;
 
 }
 
-console.log(sameObject(object1, object2));
+console.log(sameObject(object1, object3));
