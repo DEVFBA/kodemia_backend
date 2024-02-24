@@ -1,18 +1,5 @@
 const express =  require('express');
-
-const getUser = (users, id) => {
-
-    console.log(id);
-    console.log(users);
-    const user = users.find((user) => {
-        return user.id === id;
-    })
-
-    console.log(user);
-
-    return user;
-
-}
+const userRoutes = require('./src/routes/users');
 
 const app = express();
 const port = 3000;
@@ -23,35 +10,7 @@ app.use(express.json());
  * Get
  */
 
-app.get('/', (req, res) => {
-    res.status(200).send({message: "ok"});
-});
-
-app.get('/hi', (req, res) => {
-    res.status(200).send({message: "Hello Koders!!!"});
-});
-
-app.get('/user/:id', (req, res) => {
-    const { id } = req.params;
-
-    const users = [{
-
-        id: 1,
-        name: "Angel",
-        mail: "angelgtzdev@gmail.com",
-        password: "nascjni4nkjnqdui",
-    
-    },
-    {
-    
-        id: 2,
-        name: "Ricardo",
-        mail: "ricardo@gmail.com",
-        password: "fgvfsdvcsvqv34",
-    
-    }]
-    res.status(200).send(getUser(users, id));
-});
+app.use('/users', userRoutes);
 
 app.get('/math/isEven/:number', (req, res) => {
 
@@ -83,13 +42,30 @@ app.get('/math/allEven/:number', (req, res) => {
 })
 
 /**
+ * * ? follow regexp rules, char can be null or once
+ * * + char must be at least once or more times
+ * * * anything
+ */
+app.get('/ab?cd', (req, res) => {
+    res.status(200).send({message: "ok"});
+});
+
+app.get('/ef+gh', (req, res) => {
+    res.status(200).send({message: "ok"});
+});
+
+app.get('/ab*cd', (req, res) => {
+    res.status(200).send({message: "ok"});
+});
+
+/**
  * Post
  */
 
-app.post('/', (req, res) => {
-    console.log(req.body);
-    res.status(201).send({message: "Post OK"})
-});
+// app.post('/', (req, res) => {
+//     console.log(req.body);
+//     res.status(201).send({message: "Post OK"})
+// });
 
 /**
  * Put
